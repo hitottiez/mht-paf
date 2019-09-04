@@ -1,0 +1,9 @@
+[submodule "deepsort"]
+	path = deepsort
+	url = https://github.com/hitottiez/deepsort.git
+[submodule "mcf-tracker"]
+	path = mcf-tracker
+	url = https://github.com/hitottiez/mcf-tracker.git
+[submodule "tsn"]
+	path = tsn
+	url = https://github.com/hitottiez/tsn.git

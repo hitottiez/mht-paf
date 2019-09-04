@@ -1,0 +1,37 @@
+version: '2.4'
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: ${PROJECT_NETWORK_SUBNET}
+          gateway: ${PROJECT_NETWORK_GATEWAY}
+
+services:
+  mcf-tracker:
+    build:
+      context: ./mcf-tracker
+    volumes:
+        - ${DATASET_DIR}:/mnt/dataset
+        - ./mcf-tracker:/opt/multi_actrecog/mcf-tracker
+    tty: true
+
+  deepsort:
+    build:
+      context: ./deepsort
+    volumes:
+        - ${DATASET_DIR}:/mnt/dataset
+        - ./deepsort:/opt/multi_actrecog/deepsort
+    tty: true
+
+  tsn:
+    build:
+      context: ./tsn
+    runtime: nvidia
+    volumes:
+      - ${DATASET_DIR}:/mnt/dataset
+      - ./tsn:/opt/multi_actrecog/tsn
+    ports:
+      # for tensorboard,jupyter,etc...
+      - 8888:80
+    tty: true
