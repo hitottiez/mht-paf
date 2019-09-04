@@ -19,6 +19,7 @@ services:
   deepsort:
     build:
       context: ./deepsort
+    runtime: nvidia
     volumes:
         - ${DATASET_DIR}:/mnt/dataset
         - ./deepsort:/opt/multi_actrecog/deepsort
