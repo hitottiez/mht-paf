@@ -1,5 +1,7 @@
 # mht-paf
 
+All codes will be available in September.
+
 ## 要件
 
 NVIDIA driver(>= 410.48)
