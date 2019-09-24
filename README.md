@@ -3,6 +3,10 @@
 ***All codes will be available in September.***  
 ***Video results and models can be downloaded in [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).***
 
+Multiple Human Tracking using Multi-Cues including Primitive Action Features  
+Hitoshi Nishimura, Kazuyuki Tasaka, Yasutomo Kawanishi, Hiroshi Murase  
+https://arxiv.org/abs/1909.08171
+
 ## Requirements
 
 - NVIDIA driver (>= 410.48)
