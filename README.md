@@ -45,7 +45,7 @@ exit
 ```
 
 ## Prepare dataset
-Note:
+Note:  
 Dataset is assumed to be in the `dataset` directory.
 If you change the dataset directory, change `DATASET_DIR` in the `.env` file.
 
@@ -67,7 +67,7 @@ dataset
      └── 2.2.11
 ```
 
-Download all videos and labels (SingleActionTrackingLabels、MultiActionLabels) from [Okutama-Action dataset](https://github.com/miquelmarti/Okutama-Action)
+Download all videos and labels (SingleActionTrackingLabels、MultiActionLabels) from [Okutama-Action dataset](https://github.com/miquelmarti/Okutama-Action).
 
 The labels are set in the `images` directory:
 ```
