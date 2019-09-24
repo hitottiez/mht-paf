@@ -1,17 +1,18 @@
 # mht-paf
 
-All codes will be available in September.
+**All codes will be available in September.**  
+**Video results and models can be downloaded in [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).**
 
-## 要件
+## Requirements
 
-NVIDIA driver(>= 410.48)
-Docker(>= 17.12.0)
-nvidia-docker2
-docker-compose(>= 1.21.0)
+- NVIDIA driver(>= 410.48)
+- Docker(>= 17.12.0)
+- nvidia-docker2
+- docker-compose(>= 1.21.0)
 
-## セットアップ
+## Setup
 
-クローンして、ビルドを行います。
+Clone this repository and build a docker image using docker-compose:
 ```
 git clone --recursive https://github.com/hitottiez/mht-paf.git
 cd mht-paf
@@ -19,7 +20,7 @@ cp env.default .env
 docker-compose build
 ```
 
-`docker-compose up -d`で起動します。
+Start a docker container:
 ```
 docker-compose up -d
 docker-compose ps
@@ -30,30 +31,27 @@ mht-paf_mcf-tracker_1   /bin/bash   Up
 mht-paf_tsn_1           /bin/bash   Up      0.0.0.0:8888->80/tcp
 ```
 
-## コンテナログイン＆ログアウト方法
+## Login/Logout docker container
 
-各コンテナには以下のコマンドでログインします。
-
+Login each container:
 ```
 docker-compose exec <deepsort or mcf-tracker or tsn> bash
 ```
+or, follow the README.md in each repository.
 
-もしくは、各リポジトリのREADME.mdに記述されているログイン方法を使用しても構いません。
-
-コンテナからログアウト場合は`exit`でログアウトします。
+Logout each container:
 ```
 exit
 ```
 
-## データセットの準備
+## Prepare dataset
+Note:
+Dataset is assumed to be in the `dataset` directory.
+If you change the dataset directory, change `DATASET_DIR` in the `.env` file.
 
-注意：  
-データセットは`dataset`ディレクトリに置く想定で構成されています。
-設置場所を変更したい場合は、`.env`ファイルの`DATASET_DIR`を変更して下さい。
+Download all feature files from [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).
 
-[未定：データセットの設置場所](https://examplle.com)より特徴量ファイル一式をダウンロードします。
-
-ディレクトリ構成は以下の用になっています。
+Directory structure:
 ```
 dataset
 └── images
@@ -69,10 +67,9 @@ dataset
      └── 2.2.11
 ```
 
-[Okutama-Actionデータセット](https://github.com/miquelmarti/Okutama-Action)から、動画一式とSingleActionTrackingLabels、MultiActionLabelsをダウンロードします。
+Download all videos and labels (SingleActionTrackingLabels、MultiActionLabels) from [Okutama-Action dataset](https://github.com/miquelmarti/Okutama-Action)
 
-ラベルは以下のように`images`ディレクトリと同じ階層に設置します。
-
+The labels are set in the `images` directory:
 ```
 dataset
 ├── images
@@ -89,21 +86,19 @@ dataset
 │        ...
 │        └── 2.2.11.txt
 │
-└── multi_labels # MultiActionLabels labelsと同様の構成のため、省略
+└── multi_labels # as same as MultiActionLabels labels
 ```
 
-動画一式から、以下のffmpegコマンドでJPG画像を作成します。
-ffmpegは`deepsort`または`mcf-tracker`コンテナで実行可能です。
+Convert videos to JPG images using ffmpeg:
 ```
 docker-compose exec deepsort bash
 
-# in deepsort container
+# in deepsort/mcf-tracker container
 ffmpeg -i <path/to/download>/Train-Set/Drone1/Morning/1.1.1.mov  -vcodec mjpeg -start_number 0 <path/to/dataset>/images/1.1.1/%d.jpg
 ffmpeg -i <path/to/download>/Train-Set/Drone1/Morning/1.1.10.mp4  -vcodec mjpeg -start_number 0 <path/to/dataset>/images/1.1.10/%d.jpg
 ...
 ffmpeg -i <path/to/download>/Train-Set/Drone2/Noon/2.2.11.mp4  -vcodec mjpeg -start_number 0 <path/to/dataset>/images/2.2.11/%d.jpg &
 ```
 
-## 追跡、評価
-
-[deepsort](https://github.com/hitottiez/deepsort)、[mcf-tracker](https://github.com/hitottiez/mcf-tracker)のREADMEを参考に、追跡、評価を実行して下さい。
+## Tracking and evaluation
+Refer [deepsort](https://github.com/hitottiez/deepsort) and [mcf-tracker](https://github.com/hitottiez/mcf-tracker).
