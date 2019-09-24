@@ -1,14 +1,14 @@
 # mht-paf
 
-**All codes will be available in September.**  
-**Video results and models can be downloaded in [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).**
+***All codes will be available in September.***  
+***Video results and models can be downloaded in [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).***
 
 ## Requirements
 
-- NVIDIA driver(>= 410.48)
-- Docker(>= 17.12.0)
+- NVIDIA driver (>= 410.48)
+- Docker (>= 17.12.0)
 - nvidia-docker2
-- docker-compose(>= 1.21.0)
+- docker-compose (>= 1.21.0)
 
 ## Setup
 
