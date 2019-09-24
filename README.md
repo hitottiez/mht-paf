@@ -67,7 +67,7 @@ dataset
      └── 2.2.11
 ```
 
-Download all videos and labels (SingleActionTrackingLabels、MultiActionLabels) from [Okutama-Action dataset](https://github.com/miquelmarti/Okutama-Action).
+Download all videos and labels (SingleActionTrackingLabels, MultiActionLabels) from [Okutama-Action dataset](https://github.com/miquelmarti/Okutama-Action).
 
 The labels are set in the `images` directory:
 ```
