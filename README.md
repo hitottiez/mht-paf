@@ -1,11 +1,16 @@
 # mht-paf
 
 ***All codes will be available in September.***  
-***Video results and models can be downloaded in [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).***
+***Video results of all sequences and trained models can be downloaded in [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).***
 
 Multiple Human Tracking using Multi-Cues including Primitive Action Features  
 Hitoshi Nishimura, Kazuyuki Tasaka, Yasutomo Kawanishi, Hiroshi Murase  
 https://arxiv.org/abs/1909.08171
+
+MCF
+![MCF](https://github.com/hitottiez/mht-paf/blob/master/docs/without.gif)
+MHT-PAF
+![MHT-PAF](https://github.com/hitottiez/mht-paf/blob/master/docs/with.gif)
 
 ## Requirements
 
