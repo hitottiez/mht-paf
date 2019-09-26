@@ -1,6 +1,4 @@
 # mht-paf
-
-***All codes will be available in September.***  
 ***Video results of all sequences and trained models can be downloaded in [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).***
 
 Multiple Human Tracking using Multi-Cues including Primitive Action Features  
@@ -13,14 +11,12 @@ MHT-PAF
 ![MHT-PAF](https://github.com/hitottiez/mht-paf/blob/master/docs/with.gif)
 
 ## Requirements
-
 - NVIDIA driver (>= 410.48)
 - Docker (>= 17.12.0)
 - nvidia-docker2
 - docker-compose (>= 1.21.0)
 
 ## Setup
-
 Clone this repository and build a docker image using docker-compose:
 ```
 git clone --recursive https://github.com/hitottiez/mht-paf.git
@@ -41,7 +37,6 @@ mht-paf_tsn_1           /bin/bash   Up      0.0.0.0:8888->80/tcp
 ```
 
 ## Login/Logout docker container
-
 Login each container:
 ```
 docker-compose exec <deepsort or mcf-tracker or tsn> bash
@@ -54,8 +49,7 @@ exit
 ```
 
 ## Prepare dataset
-Note:  
-Dataset is assumed to be in the `dataset` directory.
+Note: Dataset is assumed to be in the `dataset` directory.
 If you change the dataset directory, change `DATASET_DIR` in the `.env` file.
 
 Download all feature files from [Google drive](https://drive.google.com/open?id=1udPbQyfa8DSMYQARuZQfRng4g_UArVhC).
@@ -109,5 +103,8 @@ ffmpeg -i <path/to/download>/Train-Set/Drone1/Morning/1.1.10.mp4  -vcodec mjpeg 
 ffmpeg -i <path/to/download>/Train-Set/Drone2/Noon/2.2.11.mp4  -vcodec mjpeg -start_number 0 <path/to/dataset>/images/2.2.11/%d.jpg &
 ```
 
-## Tracking and evaluation
-Refer [deepsort](https://github.com/hitottiez/deepsort) and [mcf-tracker](https://github.com/hitottiez/mcf-tracker).
+## Running human tracking and action recognition
+Refer [deepsort](https://github.com/hitottiez/deepsort) or [mcf-tracker](https://github.com/hitottiez/mcf-tracker).
+
+## Evaluation
+Refer [deepsort](https://github.com/hitottiez/deepsort).
