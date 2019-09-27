@@ -17,9 +17,13 @@ MHT-PAF
 - docker-compose (>= 1.21.0)
 
 ## Setup
-Clone this repository and build a docker image using docker-compose:
+Clone this repository:
 ```
 git clone --recursive https://github.com/hitottiez/mht-paf.git
+```
+
+Build a docker image using docker-compose:
+```
 cd mht-paf
 cp env.default .env
 docker-compose build
@@ -48,7 +52,7 @@ Logout each container:
 exit
 ```
 
-## Prepare dataset
+## Preparing dataset
 Note: Dataset is assumed to be in the `dataset` directory.
 If you change the dataset directory, change `DATASET_DIR` in the `.env` file.
 
@@ -104,7 +108,7 @@ ffmpeg -i <path/to/download>/Train-Set/Drone2/Noon/2.2.11.mp4  -vcodec mjpeg -st
 ```
 
 ## Running human tracking and action recognition
-Refer [deepsort](https://github.com/hitottiez/deepsort) or [mcf-tracker](https://github.com/hitottiez/mcf-tracker).
+We provide two choices, [deepsort](https://github.com/hitottiez/deepsort) and [mcf-tracker](https://github.com/hitottiez/mcf-tracker).
 
 ## Evaluation
 Refer [deepsort](https://github.com/hitottiez/deepsort).
